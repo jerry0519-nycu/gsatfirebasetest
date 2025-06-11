@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>單字與片語選擇題測驗</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 900px; margin: auto; }
+    h1 { text-align: center; }
+    .question { margin-bottom: 20px; }
+    .correct { color: green; font-weight: bold; }
+    .incorrect { color: red; font-weight: bold; }
+    .answer-key { display: none; margin-top: 20px; background: #f9f9f9; padding: 15px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+
+<h1>單字與片語選擇題測驗</h1>
+
+<form id="quizForm">
+
+  <!-- 題目區 -->
+  <div class="question">
+    <p>1. What is the closest meaning of <strong>"despise"</strong>?</p>
+    <label><input type="radio" name="q1" value="A"> Forgive</label><br>
+    <label><input type="radio" name="q1" value="B"> Praise</label><br>
+    <label><input type="radio" name="q1" value="C"> Disrespect</label><br>
+    <label><input type="radio" name="q1" value="D"> Comfort</label><br>
+  </div>
+
+  <div class="question">
+    <p>2. Which word means “強烈的情緒，通常是憤怒”？</p>
+    <label><input type="radio" name="q2" value="A"> Instinct</label><br>
+    <label><input type="radio" name="q2" value="B"> Rage</label><br>
+    <label><input type="radio" name="q2" value="C"> Criticism</label><br>
+    <label><input type="radio" name="q2" value="D"> Comfort</label><br>
+  </div>
+
+  <div class="question">
+    <p>3. What does the phrase <strong>"stand up for"</strong> mean?</p>
+    <label><input type="radio" name="q3" value="A"> Sit down</label><br>
+    <label><input type="radio" name="q3" value="B"> Avoid</label><br>
+    <label><input type="radio" name="q3" value="C"> Support</label><br>
+    <label><input type="radio" name="q3" value="D"> Ignore</label><br>
+  </div>
+
+  <div class="question">
+    <p>4. Which is a synonym of <strong>"encourage"</strong>?</p>
+    <label><input type="radio" name="q4" value="A"> Discourage</label><br>
+    <label><input type="radio" name="q4" value="B"> Inspire</label><br>
+    <label><input type="radio" name="q4" value="C"> Criticize</label><br>
+    <label><input type="radio" name="q4" value="D"> Punish</label><br>
+  </div>
+
+  <div class="question">
+    <p>5. The word <strong>"assault"</strong> most likely refers to:</p>
+    <label><input type="radio" name="q5" value="A"> Appointment</label><br>
+    <label><input type="radio" name="q5" value="B"> Attack</label><br>
+    <label><input type="radio" name="q5" value="C"> Alcohol</label><br>
+    <label><input type="radio" name="q5" value="D"> Morality</label><br>
+  </div>
+
+  <div class="question">
+    <p>6. What does <strong>"fly into a rage"</strong> mean?</p>
+    <label><input type="radio" name="q6" value="A"> Calm down</label><br>
+    <label><input type="radio" name="q6" value="B"> Become very angry</label><br>
+    <label><input type="radio" name="q6" value="C"> Fly away</label><br>
+    <label><input type="radio" name="q6" value="D"> Feel tired</label><br>
+  </div>
+
+  <div class="question">
+    <p>7. What is the opposite of <strong>"encouragement"</strong>?</p>
+    <label><input type="radio" name="q7" value="A"> Support</label><br>
+    <label><input type="radio" name="q7" value="B"> Help</label><br>
+    <label><input type="radio" name="q7" value="C"> Discouragement</label><br>
+    <label><input type="radio" name="q7" value="D"> Motivation</label><br>
+  </div>
+
+  <div class="question">
+    <p>8. What does <strong>"comfort"</strong> NOT mean?</p>
+    <label><input type="radio" name="q8" value="A"> Pain</label><br>
+    <label><input type="radio" name="q8" value="B"> Ease</label><br>
+    <label><input type="radio" name="q8" value="C"> Solace</label><br>
+    <label><input type="radio" name="q8" value="D"> Support</label><br>
+  </div>
+
+  <div class="question">
+    <p>9. What does the phrase <strong>"hold one’s head up"</strong> suggest?</p>
+    <label><input type="radio" name="q9" value="A"> Shame</label><br>
+    <label><input type="radio" name="q9" value="B"> Pride</label><br>
+    <label><input type="radio" name="q9" value="C"> Anger</label><br>
+    <label><input type="radio" name="q9" value="D"> Sadness</label><br>
+  </div>
+
+  <div class="question">
+    <p>10. What is a synonym for <strong>"criticize"</strong>?</p>
+    <label><input type="radio" name="q10" value="A"> Praise</label><br>
+    <label><input type="radio" name="q10" value="B"> Support</label><br>
+    <label><input type="radio" name="q10" value="C"> Blame</label><br>
+    <label><input type="radio" name="q10" value="D"> Encourage</label><br>
+  </div>
+
+  <input type="text" id="studentName" placeholder="請輸入你的名字(擔心個資風險可不填真名，亂打一些東西即可)" required style="margin-top: 20px; padding: 5px; font-size: 16px;"><br><br>
+  <input type="email" id="studentEmail" placeholder="請輸入你的Email" required style="padding: 5px; font-size: 16px;"><br><br>
+  <label><input type="checkbox" id="sendEmail"> 寄送成績到 Email(為了個資請盡量不要使用個人帳號，若有疑慮也可選擇不勾選)</label><br><br>
+  <input type="submit" value="提交答案" style="padding: 10px 20px; font-size: 16px;">
+</form>
+
+<div id="results" style="margin-top: 30px;"></div>
+<button id="showAnswersBtn" style="display:none; margin-top: 20px; padding: 10px 20px;">查看正確答案</button>
+<div id="answerKey" class="answer-key"></div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  const firebaseConfig = {
+    databaseURL: "https://vocab-quiz-e7b79-default-rtdb.firebaseio.com/"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  emailjs.init("NU707-p2vR5JYxrYK"); // 請替換為你自己的公鑰
+
+  const answers = {
+    q1: "C", q2: "B", q3: "C", q4: "B", q5: "B",
+    q6: "B", q7: "C", q8: "A", q9: "B", q10: "C"
+  };
+
+  document.getElementById('quizForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const studentName = document.getElementById('studentName').value.trim();
+    const studentEmail = document.getElementById('studentEmail').value.trim();
+    const wantsEmail = document.getElementById('sendEmail').checked;
+    if (!studentName || !studentEmail) {
+      alert("請輸入名字和Email");
+      return;
+    }
+
+    let score = 0;
+    let userAnswers = {};
+    let resultHTML = "<h3>作答結果：</h3><ul>";
+    let answerSummary = "【你的作答】\n";
+    let answerKey = "\n【正確答案】\n";
+
+    for (let key in answers) {
+      const radios = document.getElementsByName(key);
+      let userAnswer = "";
+      for (let radio of radios) {
+        if (radio.checked) userAnswer = radio.value;
+      }
+
+      userAnswers[key] = userAnswer;
+      if (userAnswer === answers[key]) {
+        score++;
+        resultHTML += `<li>${key.toUpperCase().replace("Q", "第 ")} 題：<span class="correct">正確</span></li>`;
+      } else {
+        resultHTML += `<li>${key.toUpperCase().replace("Q", "第 ")} 題：<span class="incorrect">錯誤</span>（你選的是 ${userAnswer || "未作答"}）</li>`;
+      }
+
+      answerSummary += `第 ${key.slice(1)} 題：${userAnswer || "未作答"}\n`;
+      answerKey += `第 ${key.slice(1)} 題：${answers[key]}\n`;
+    }
+
+    answerSummary += answerKey;
+
+    resultHTML += `</ul><h3>你的總得分：${score} / ${Object.keys(answers).length}</h3>`;
+    document.getElementById("results").innerHTML = resultHTML;
+
+    // 儲存至 Firebase
+    db.ref("responses/" + studentName).set({
+      name: studentName,
+      email: studentEmail,
+      answers: userAnswers,
+      score: score,
+      timestamp: new Date().toISOString()
+    });
+
+    // 寄送 Email（可選）
+    if (wantsEmail) {
+      emailjs.send("service_zvqke58", "template_kyie4yc", {
+        student_name: studentName,
+        student_email: studentEmail,
+        score: `${score} / ${Object.keys(answers).length}`,
+        answer_details: answerSummary
+      }).then(() => {
+        alert("成績已寄出！");
+      }, (error) => {
+        alert("寄送失敗：" + JSON.stringify(error));
+      });
+    }
+
+    document.getElementById("showAnswersBtn").style.display = "inline-block";
+  });
+
+  document.getElementById("showAnswersBtn").addEventListener("click", function() {
+    let answerList = "<h3>正確答案：</h3><ol>";
+    answerList += "<li>Despise = <strong>Disrespect (C)</strong></li>";
+    answerList += "<li>強烈的情緒（憤怒） = <strong>Rage (B)</strong></li>";
+    answerList += "<li>Stand up for = <strong>Support (C)</strong></li>";
+    answerList += "<li>Synonym of encourage = <strong>Inspire (B)</strong></li>";
+    answerList += "<li>Assault = <strong>Attack (B)</strong></li>";
+    answerList += "<li>Fly into a rage = <strong>Become very angry (B)</strong></li>";
+    answerList += "<li>Opposite of encouragement = <strong>Discouragement (C)</strong></li>";
+    answerList += "<li>Comfort does NOT mean = <strong>Pain (A)</strong></li>";
+    answerList += "<li>Hold one’s head up = <strong>Pride (B)</strong></li>";
+    answerList += "<li>Synonym for criticize = <strong>Blame (C)</strong></li>";
+    answerList += "</ol>";
+    document.getElementById("answerKey").innerHTML = answerList;
+    document.getElementById("answerKey").style.display = "block";
+  });
+</script>
+
+</body>
+</html>
